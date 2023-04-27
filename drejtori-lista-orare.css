@@ -1,0 +1,627 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+    background-color: #F9D8E5;
+    display: flex;
+    flex-direction: row;
+}
+
+.majta{
+    width: 300px;
+    height:762px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-self: center;
+}
+
+.majta h1{
+    margin: 0 auto;
+    margin-top: -60px;
+}
+
+.nxenesi{
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-icon{
+    background-color:#FBD9E7 ;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+#emri{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+
+#emri a{
+    color: black;
+}
+
+.opsionet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.mesuesit, .nxenesit, .kalendari, .njoftimet, .oraret{
+    font-size: 25px;
+    margin-top: 20px;
+    font-family: 'Sigmar', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.mesuesit a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.nxenesit a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.kalendari a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.njoftimet a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.oraret a{
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.mesuesit i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.nxenesit i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.kalendari i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.njoftimet i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.oraret i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+a:hover{
+    color: black;
+}
+
+#logout{
+    width: 200px;
+    margin:0 auto;
+    height: 70px;
+    padding: 10px;
+    border-radius:40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout a{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout:hover{
+    color: red;
+    background-color: red;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #8ABAD7;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Sigmar', cursive;
+    margin-left: 10px;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .dropdown-content {
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    min-width: 140px;
+    z-index: 1;
+    border-radius: 20px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(-20px);
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+    z-index: 100;
+    overflow-y: auto;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .dropdown-content a:hover {
+    color: #8ABAD7;
+    background-color: black;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .dropdown:hover .dropbtn {
+    color: black;
+    background-color: #8ABAD7;
+  }
+  
+  .dropdown-content.mesuesit {
+    right: 0;
+}
+
+.djathta{
+    height:760px;
+    width: 1234px;
+    display: flex;
+    justify-content:space-evenly;
+    align-self: center;
+    flex-direction: column;
+}
+
+.id-input{
+    margin:0 auto;
+    font-size: 35px;
+    width: 400px;
+    height: 50px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+#id{
+    font-size: 22px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 20px;
+    background-color: #F9D8E5;
+    border: 0px;
+}
+
+.personale{
+    width: 550px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #8ABAD7;
+    border-radius:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 13px;
+}
+
+.emri, .mbiemri, .personal, .adresa, .tel{
+        font-size: 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+        font-family: 'Fjalla One', sans-serif;
+        color: white;
+}
+
+.personal{
+    margin-right: 10px;
+}
+
+#input-emri, #input-mbiemri, #input-personal, #input-adresa, #input-tel{
+    height: 30px;
+    width: 200px;
+    margin-left: 10px;
+    border-radius:10px;
+    border: none;
+    background-color:#F9D8E5 ;
+    font-size: 30px;
+    text-align: center;
+}
+
+#personale1{
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: underline crimson dotted;
+    font-size: 35px;
+}
+
+.paga{
+    margin:0 auto;
+    font-size: 35px;
+    width: 500px;
+    height: 50px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+#input-paga{
+    font-size: 22px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #F9D8E5;
+    border: 0px;
+    width: 100px;
+    margin-left:10px;
+    margin-right: 5px;
+    font-weight: bold;
+    height: 28px;
+}
+
+.emri{
+    margin-left: 60px;
+}
+
+.adresa{
+    margin-left: 8px;
+}
+
+.tel{
+    margin-left: 25px;
+}
+
+.djathtas{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titull{
+    margin:0 auto;
+    font-size: 35px;
+    width: 500px;
+    height: 50px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.first{
+    width: 800px;
+    height: fit-content;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#shto{
+    width: 150px;
+    height: 40px;
+    font-size: 25px;
+    color: red;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    margin-top: 10px;
+    font-weight: bolder;
+    transition: 0.3s ease-in-out;
+}
+
+#shto:hover{
+    font-size: 28px;
+    width: 200px;
+    background-color: red;
+    color: white;
+}
+
+.second{
+    width: 800px;
+    height: fit-content;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+} 
+
+.djathtas p {
+    color: red;
+}
+
+.first #klase{
+    width: 200px;
+    margin: 0 auto;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #8ABAD7;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+.second #klase{
+    width: 200px;
+    margin: 0 auto;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    background-color: #8ABAD7;
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+.first #klase::placeholder{
+    font-weight: bolder;
+}
+
+input:focus {
+    outline: none;
+    border: none;
+  }
+
+table{
+    width: 800px;
+    margin-top:30px ;
+    font-size: 20px;
+    border: 2px solid black;
+}
+
+table td{
+    height: 30px;
+    border: 2px solid black;
+
+}
+
+table #dita{
+    width: 100px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: white;
+}
+
+table th{
+    color: red;
+    font-family: 'Sigmar', cursive;
+    border: 2px solid black;
+
+}
+
+#one,#two,#three,#four, #five{
+    width: 130px;
+    font-size: 20px;
+    text-align: center;
+    background-color: white;
+    border:none ;
+    color: red;
+    border: 2px solid black;
+    font-family: 'Sigmar', cursive;
+}
+
+input{
+    height: 100%;
+}
+
+.first{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.oraret{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+button{
+    background-color: white;
+    height: 30px;
+    padding:20px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 900px;
+}
+
+button i{
+    margin-right: 2px;
+    font-size: 30px;
+}
+
+button:hover{
+    background-color: red;
+    transform: scale(1.1);
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.butonat{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#delete-btn{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+
+  #update-btn{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  #update-btn:hover{
+    background-color: blue;
+    color: white;
+  }
+
+  #update-btn i{
+    font-size: 25px;
+    margin-left:3px;
+    width: 100%;
+    height: 100%;
+  }
+
+  #delete-btn:hover{
+    color: white;
+    background-color: red;
+  }
+
+  #delete-btn i{
+    font-size: 25px;
+    margin-left:3px;
+    width: 100%;
+    height: 100%;
+  }
+
+  
