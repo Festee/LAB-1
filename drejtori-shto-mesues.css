@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+    background-color: #F9D8E5;
+    display: flex;
+    flex-direction: row;
+}
+
+.majta{
+    width: 300px;
+    height:762px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-self: center;
+}
+
+.majta h1{
+    margin: 0 auto;
+    margin-top: -60px;
+}
+
+.nxenesi{
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-icon{
+    background-color:#FBD9E7 ;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+#emri{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+
+#emri a{
+    color: black;
+}
+
+.opsionet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.mesuesit, .nxenesit, .kalendari, .njoftimet, .oraret{
+    font-size: 25px;
+    margin-top: 20px;
+    font-family: 'Sigmar', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.mesuesit a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.nxenesit a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.kalendari a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.njoftimet a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.oraret a{
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.mesuesit i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.nxenesit i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.kalendari i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.njoftimet i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.oraret i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+a:hover{
+    color: black;
+}
+
+#logout{
+    width: 200px;
+    margin:0 auto;
+    height: 70px;
+    padding: 10px;
+    border-radius:40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout a{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout:hover{
+    color: red;
+    background-color: red;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #8ABAD7;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Sigmar', cursive;
+    margin-left: 10px;
+    transition: background-color 0.5s ease-in-out;
+  }
+  
+  .dropdown-content {
+    opacity: 0;
+    position: absolute;
+    background-color: white;
+    min-width: 140px;
+    z-index: 1;
+    border-radius: 20px;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(-20px);
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
+    z-index: 100;
+    overflow-y: auto;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 10px;
+  }
+  
+  .dropdown-content a:hover {
+    color: #8ABAD7;
+    background-color: black;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .dropdown:hover .dropbtn {
+    color: black;
+    background-color: #8ABAD7;
+  }
+  
+  .dropdown-content.mesuesit {
+    right: 0;
+}
+
+.djathtas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.djathtas h1{
+    margin:0 auto;
+    font-size: 35px;
+    width: 400px;
+    height: 50px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+    margin-top: -120px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 500px;
+    height: fit-content;
+    border-radius: 30px;
+    background-color: #8ABAD7;
+    margin-bottom: 30px;
+  }
+  
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #input1,#input2,#input3,#input4,#input5,#input6,#input7,#input8,#input9,#input10{
+    margin: 10px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  #regjistro{
+    width: 140px;
+    height: 60px;
+    color: white;
+    background-color: black;
+    border-radius: 30px;
+    font-size: 20px;
+    margin-bottom: -150px;
+    cursor: pointer;
+    font-weight: bolder;
+    transition: 0.5s ease-in-out;
+  }
+
+  #regjistro:hover{
+    background-color: white;
+    color: black;
+  }
+
+  .klasa{
+    margin: 10px;
+    height: 30px;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 16px;
+    background-color: white;
+    font-size: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+ 
+
+  .klasa-zgjedh{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+  }
+
+  #klasa-dropdown{
+    height: 30px;
+    font-size: 15px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    font-weight: bolder;
+    color: white;
+    background-color: red;
+  }
