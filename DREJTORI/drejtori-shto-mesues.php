@@ -1,3 +1,6 @@
+<?php
+    $db=mysqli_connect("localhost","root","","lab-1");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +51,13 @@
             </div>
             <div class="njoftimet">
                 <i class="fa-solid fa-bell"></i>
-                <a href="drejtori-njoftimet.php">NJOFTIMET</a>
+                <div class="dropdown">
+                    <button class="dropbtn">NJOFTIMET</button>
+                    <div class="dropdown-content">
+                        <a href="drejtori-lista-njoftimet.php">LISTA</a>
+                        <a href="drejtori-njoftimet.php">SHTO NJOFTIM</a>
+                    </div>
+                </div>
             </div>
             <div class="oraret">
                 <i class="fa-sharp fa-solid fa-clock"></i>
@@ -64,27 +73,28 @@
         <button id="logout"><a href="#">LOGOUT</a></button>
     </div>
     <div class="djathtas">
+        <form action="demo-shto-mesues.php" method="post" id="forma">
         <h1>SHTO MESUESIN</h1>
         <div class="container">
             <div class="left">
-                <input type="text" id="input1" placeholder="ID...">
-                <input type="text" id="input2" placeholder="Emri...">
-                <input type="text" id="input3" placeholder="Mbiemri...">
-                <input type="text" id="input4" placeholder="Email...">
-                <input type="text" id="input5" placeholder="Nr.tel...">
+                <input type="text" id="input1" placeholder="ID..." name="mesuesi_id">
+                <input type="text" id="input2" placeholder="Emri..." name="emri">
+                <input type="text" id="input3" placeholder="Mbiemri..." name="mbiemri">
+                <input type="text" id="input4" placeholder="Email..." name="email">
+                <input type="text" id="input5" placeholder="Nr.tel..." name="telefoni">
             </div>
 
             <div class="right">
-                <input type="text" id="input6" placeholder="Gjinia...">
-                <input type="text" id="input7" placeholder="Data e lindjes...">
-                <input type="text" id="input8" placeholder="Adresa...">
-                <input type="text" id="input9" placeholder="Login email...">
-                <input type="text" id="input10" placeholder="Login password...">
+                <input type="text" id="input6" placeholder="Gjinia..." name="gjinia">
+                <input style="width: 200px;" type="date" id="input7" placeholder="Data e lindjes..." name="datelindja">
+                <input type="text" id="input8" placeholder="Adresa..." name="adresa">
+                <input type="text" id="input9" placeholder="Login email..." name="login_email">
+                <input type="text" id="input10" placeholder="Login password..." name="login_password">
             </div>
 
             <div class="klasa-zgjedh">
                 <h3 class="klasa">Zgjedh nje klase:</h3>
-                <select id="klasa-dropdown">
+                <select id="klasa-dropdown" name="klasa">
                     <option value="I/1">I/1</option>
                     <option value="I/2">I/2</option>
                     <option value="II/1">II/1</option>
@@ -98,8 +108,30 @@
                 </select>
             </div>
         </div>
-        <button id="regjistro">REGJISTRO</button>
+        <button id="regjistro" type="submit" name="submit" value="Submit">REGJISTRO</button>    
+    </form>
     </div>
 </body>
-
 </html>
+
+<?php
+    if(isset($_POST['submit'])){
+        $mesuesi_id=$_POST['mesuesi_id'];
+        $emri=$_POST['emri'];
+        $mbiemri=$_POST['mbiemri'];
+        $email=$_POST['email'];
+        $telefoni=$_POST['telefoni'];
+        $gjinia=$_POST['gjinia'];
+        $datelindja=$_POST['datelindja'];
+        $adresa=$_POST['adresa'];
+        $login_email=$_POST['login_email'];
+        $login_password=$_POST['login_password'];
+        $klasa=$_POST['klasa'];
+
+        $qry="INSERT into mesuesit values(null,'$mesuesi_id','$emri','$mbiemri','$email','$telefoni','$gjinia','$datelindja','$adresa','$login_email','$login_password','$klasa')";
+
+        if(mysqli_query($db,$qry)){
+            echo '<script>alert("U shtua mesuesi!")</script>';
+        }
+    }
+?>
