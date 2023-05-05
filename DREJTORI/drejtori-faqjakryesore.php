@@ -1,3 +1,7 @@
+<?php
+    $db=mysqli_connect("localhost","root","","lab-1");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +15,19 @@
 </head>
 <body>
     <div class="majta">
+        <?php
+            $qry="SELECT * FROM drejtori";
+            $run=$db->query($qry);
+            if($run -> num_rows>0){
+                while($row=$run->fetch_assoc()){
+                    $id=$row['ID'];
+                    $emri=$row['Emri'];
+                    $mbiemri=$row['Mbiemri'];
+                    $nrpersonal=$row['NrPersonal'];
+                    $adresa=$row['Adresa'];
+                    $telefoni=$row['NrTel'];
+                    $paga=$row['Paga'];
+        ?>
         <h1>DREJTORI</h1>
         <div class="nxenesi">
             <i id="user-icon" class="fa-solid fa-crown fa-2xl"></i>
@@ -45,7 +62,13 @@
             </div>
             <div class="njoftimet">
                 <i class="fa-solid fa-bell"></i>
-                <a href="drejtori-njoftimet.php">NJOFTIMET</a>
+                <div class="dropdown">
+                    <button class="dropbtn">NJOFTIMET</button>
+                    <div class="dropdown-content">
+                        <a href="drejtori-lista-njoftimet.php">LISTA</a>
+                        <a href="drejtori-njoftimet.php">SHTO NJOFTIM</a>
+                    </div>
+                </div>
             </div>
             <div class="oraret">
                 <i class="fa-sharp fa-solid fa-clock"></i>
@@ -68,29 +91,33 @@
             <h1 id="personale1">TË DHËNAT PERSONALE</h1>
             <div class="emri">
                 <label>EMRI:</label>
-                <input type="text" id="input-emri">
+                <input type="text" id="input-emri" value="<?php echo $emri;?>">
             </div>
             <div class="mbiemri">
                 <label>MBIEMRI:</label>
-                <input type="text" id="input-mbiemri">
+                <input type="text" id="input-mbiemri" value="<?php echo $mbiemri?>">
             </div>
             <div class="personal">
                 <label>NR.PERSONAL:</label>
-                <input type="text" id="input-personal">
+                <input type="text" id="input-personal" value="<?php echo $nrpersonal?>">
             </div>
             <div class="adresa">
                 <label>ADRESA:</label>
-                <input type="text" id="input-adresa">
+                <input type="text" id="input-adresa" value="<?php echo $adresa?>">
             </div>
             <div class="tel">
                 <label>NR.TEL:</label>
-                <input type="text" id="input-tel">
+                <input type="text" id="input-tel" value="<?php echo $telefoni?>">
             </div>
         </div>
         <div class="paga">
             <label>PAGA MOMENTALE</label>
-            <input type="text" id="input-paga" >
+            <input type="text" id="input-paga" value="<?php echo $paga?>">
         </div>
     </div>
+    <?php
+        }
+    }
+    ?>
 </body>
 </html>
