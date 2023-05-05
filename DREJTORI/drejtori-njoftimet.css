@@ -383,7 +383,7 @@ table {
     background-color: white;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     border-radius: 30px;
     font-weight: bold;
@@ -554,4 +554,11 @@ table {
   
   .dropdown-content.mesuesit {
     right: 0;
+}
+
+#forma{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
