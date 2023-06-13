@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHTO MESUES</title>
+    <title>DREJTORI SHTO NJOFTIM</title>
     <link rel="stylesheet" href="drejtori-njoftimet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <button id="logout"><a href="#">LOGOUT</a></button>
+        <button id="logout"><a href="logout.php">LOGOUT</a></button>
     </div>
     <div class="djathtas">
     <h1 id="njoftimi">Shto njoftimin e rradhes:</h1>
@@ -90,10 +90,17 @@
     if(isset($_POST['submit'])){
         $njoftimi=$_POST['njoftimi'];
 
-        $qry="INSERT into njoftimet values(null,'$njoftimi')";
-
-        if(mysqli_query($db,$qry)){
+        if(empty($njoftimi)){
+            echo '<script>alert("Ju lutemi, plotesoni te gjitha fushen e kerkuara!")</script>';
+        }else{
+            $qry="INSERT into njoftimet values(null,'$njoftimi')";
+            if(mysqli_query($db,$qry)){
             header('location:drejtori-lista-njoftimet.php');
         }
+        }
+
+        
+
+        
     }
 ?>
