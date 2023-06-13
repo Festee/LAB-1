@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $db=mysqli_connect("localhost","root","","lab-1");
 ?>
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHTO MESUES</title>
+    <title>DREJTORI SHTO MESUES</title>
     <link rel="stylesheet" href="drejtori-shto-mesues.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -70,10 +71,10 @@
                 </div>
             </div>
         </div>
-        <button id="logout"><a href="#">LOGOUT</a></button>
+        <button id="logout"><a href="logout.php">LOGOUT</a></button>
     </div>
     <div class="djathtas">
-        <form action="demo-shto-mesues.php" method="post" id="forma">
+        <form action="" method="post" id="forma">
         <h1>SHTO MESUESIN</h1>
         <div class="container">
             <div class="left">
@@ -108,13 +109,15 @@
                 </select>
             </div>
         </div>
-        <button id="regjistro" type="submit" name="submit" value="Submit">REGJISTRO</button>    
+        <button id="regjistro" type="submit" name="submit" value="Submit">REGJISTRO</button>  
+        
     </form>
     </div>
 </body>
 </html>
 
 <?php
+
     if(isset($_POST['submit'])){
         $mesuesi_id=$_POST['mesuesi_id'];
         $emri=$_POST['emri'];
@@ -127,11 +130,21 @@
         $login_email=$_POST['login_email'];
         $login_password=$_POST['login_password'];
         $klasa=$_POST['klasa'];
+        
+        
+        if (empty($mesuesi_id) || empty($emri) || empty($mbiemri) || empty($email) || empty($telefoni) || empty($gjinia) || empty($datelindja) || empty($adresa) || empty($login_email) || empty($login_password) || empty($klasa)) {
+            echo '<script>alert("Ju lutemi, plotesoni te gjitha fushat e kerkuara!")</script>';
+        }else{if (!filter_var($login_email, FILTER_VALIDATE_EMAIL) || !preg_match('/@shkolla\.com$/', $login_email)) {
+            echo '<script>alert("Ju lutemi, plotesoni nje email te vlefshem te shkolles!")</script>';
+          } else {
+            $qry="INSERT into mesuesit values(null,'$mesuesi_id','$emri','$mbiemri','$email','$telefoni','$gjinia','$datelindja','$adresa','$login_email','$login_password','$klasa')";
 
-        $qry="INSERT into mesuesit values(null,'$mesuesi_id','$emri','$mbiemri','$email','$telefoni','$gjinia','$datelindja','$adresa','$login_email','$login_password','$klasa')";
-
-        if(mysqli_query($db,$qry)){
-            echo '<script>alert("U shtua mesuesi!")</script>';
+           if(mysqli_query($db,$qry)){
+          echo '<script>alert("U shtua mesuesi!")</script>';
         }
+          }
+        }
+        
+        session_destroy();  
     }
 ?>
