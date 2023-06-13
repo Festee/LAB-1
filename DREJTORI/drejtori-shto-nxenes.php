@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SHTO NXENES</title>
+    <title>DREJTORI SHTO NXENES</title>
     <link rel="stylesheet" href="drejtori-shto-nxenes.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      <button id="logout"><a href="#">LOGOUT</a></button>
+      <button id="logout"><a href="logout.php">LOGOUT</a></button>
     </div>
     <div class="djathtas">
      <form action="" method="post" id="forma">
@@ -131,11 +131,25 @@
     $login_password=$_POST['login_password'];
     $klasa=$_POST['klasa'];
 
-    $qry="INSERT into nxenesit values(null,'$nxenesi_id','$emri','$mbiemri','$prindi','$telefoni','$gjinia','$datelindja','$adresa','$login_email','$login_password','$klasa')";
+    
   
-  if(mysqli_query($db,$qry)){
-    echo '<script>alert("U shtua nxenesi!")</script>';
+    if (empty($nxenesi_id) || empty($emri) || empty($mbiemri) || empty($prindi) || empty($telefoni) || empty($gjinia) || empty($datelindja) || empty($adresa) || empty($login_email) || empty($login_password) || empty($klasa)) {
+      echo '<script>alert("Ju lutemi, plotesoni te gjitha fushat e kerkuara!")</script>';
+  } else {
+      if (!filter_var($login_email, FILTER_VALIDATE_EMAIL) || !preg_match('/@shkolla\.com$/', $login_email)) {
+          echo '<script>alert("Ju lutemi, plotesoni nje email te vlefshem te shkolles!")</script>';
+      } else {
+          $qry="INSERT INTO nxenesit VALUES (null, '$nxenesi_id', '$emri', '$mbiemri', '$prindi', '$telefoni', '$gjinia', '$datelindja', '$adresa', '$login_email', '$login_password', '$klasa')";
+          if(mysqli_query($db, $qry)){
+              echo '<script>alert("U shtua nxenesi!")</script>';
+          } else {
+              echo '<script>alert("Dicka shkoi gabim!")</script>';
+          }
+      }
   }
+
+
+ 
   }
 
   
