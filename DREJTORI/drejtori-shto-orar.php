@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREJTORI</title>
+    <title>DREJTORI SHTO ORAR</title>
     <link rel="stylesheet" href="drejtori-shto-orar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E/%22%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -68,7 +68,7 @@
                   </div>
             </div>
         </div>
-        <button id="logout"><a href="#">LOGOUT</a></button>
+        <button id="logout"><a href="logout.php">LOGOUT</a></button>
     </div>
     <div class="djathtas">
         <div class="titull">SHTO ORAR</div>
@@ -168,6 +168,22 @@
     $qry="INSERT into orari values (null,'$klasa','$hene1','$hene2','$hene3','$hene4','$hene5','$marte1','$marte2','$marte3','$marte4','$marte5',
     '$merkure1','$merkure2','$merkure3','$merkure4','$merkure5','$enjte1','$enjte2','$enjte3','$enjte4','$enjte5',
     '$premte1','$premte2','$premte3','$premte4','$premte5')";
+
+$validSubjects = ['Gjuhe Shqipe', 'Matematike', 'Gjuhe Angleze', 'Shkenca Natyrore', 'Art', 'Muzike', 'Edukate fizike', 'Edukate qytetare'];
+$subjects = [
+    $hene1, $hene2, $hene3, $hene4, $hene5,
+    $marte1, $marte2, $marte3, $marte4, $marte5,
+    $merkure1, $merkure2, $merkure3, $merkure4, $merkure5,
+    $enjte1, $enjte2, $enjte3, $enjte4, $enjte5,
+    $premte1, $premte2, $premte3, $premte4, $premte5
+];
+
+foreach ($subjects as $subject) {
+    if (!in_array($subject, $validSubjects)) {
+        echo '<script>alert("Lenda gabim! Lende valide jane: Gjuhe Shqipe, Matematike, Gjuhe Angleze, Shkenca Natyrore, Art, Muzike, Edukate fizike, Edukate qytetare")</script>';
+        exit; // Stop further execution
+    }
+}
 
 if(mysqli_query($db,$qry)){
   echo '<script>alert("U shtua orari!")</script>';
