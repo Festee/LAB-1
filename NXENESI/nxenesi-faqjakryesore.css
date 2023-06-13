@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+    background-color: #F9D8E5;
+    display: flex;
+    flex-direction: row;
+}
+
+.majta{
+    width: 300px;
+    height:762px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-self: center;
+}
+
+.majta h1{
+    margin: 0 auto;
+    margin-top: -60px;
+}
+
+.nxenesi{
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-icon{
+    background-color:#FBD9E7 ;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+#emri{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+
+#emri a{
+    color: black;
+}
+
+.opsionet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.orari, .materialet, .notat, .njoftimet, .kalkulatori{
+    font-size: 25px;
+    margin-top: 20px;
+    font-family: 'Sigmar', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.orari a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.materialet a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.notat a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.njoftimet a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.kalkulatori a{
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.orari i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.njoftimet i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.kalkulatori i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.notat i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.materialet i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+a:hover{
+    color: black;
+}
+
+#logout{
+    width: 200px;
+    margin:0 auto;
+    height: 70px;
+    padding: 10px;
+    border-radius:40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout a{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout:hover{
+    color: red;
+    background-color: red;
+}
+
+
+.djathta{
+    height:760px;
+    width: 1234px;
+    display: flex;
+    justify-content:space-evenly;
+    align-self: center;
+    flex-direction: column;
+}
+
+.id-input{
+    margin:0 auto;
+    font-size: 35px;
+    width: 400px;
+    height: 50px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+#id{
+    font-size: 22px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 20px;
+    background-color: #F9D8E5;
+    border: 0px;
+}
+
+.personale{
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #8ABAD7;
+    border-radius:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 13px;
+}
+
+.emri, .mbiemri, .prindi, .adresa, .tel{
+        font-size: 35px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+        font-family: 'Fjalla One', sans-serif;
+        color: white;
+}
+
+#input-emri, #input-mbiemri, #input-prindi, #input-adresa, #input-tel{
+    height: 30px;
+    width: 200px;
+    margin-left: 10px;
+    border-radius:10px;
+    border: none;
+    background-color:#F9D8E5 ;
+    font-size: 30px;
+    text-align: center;
+}
+
+#personale1{
+    color: white;
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: underline crimson dotted;
+}
+
+.pagesat{
+    margin:0 auto;
+    font-size: 35px;
+    width: 400px;
+    height: 50px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+#input-pagesa{
+    font-size: 22px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #F9D8E5;
+    border: 0px;
+    width: 100px;
+    margin-left:10px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.emri{
+    margin-left: 60px;
+}
+
+.prindi{
+    margin-left:37px ;
+}
+
+.adresa{
+    margin-left: 8px;
+}
+
+.tel{
+    margin-left: 25px;
+}
