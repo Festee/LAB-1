@@ -45,7 +45,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DREJTORI</title>
+    <title>DREJTORI EDIT ORARE</title>
     <link rel="stylesheet" href="drejtori-shto-orar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E/%22%3E">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -106,7 +106,7 @@
                   </div>
             </div>
         </div>
-        <button id="logout"><a href="#">LOGOUT</a></button>
+        <button id="logout"><a href="logout.php">LOGOUT</a></button>
     </div>
     <div class="djathtas">
         <div class="titull">SHTO ORAR</div>
@@ -206,7 +206,23 @@
     Marte1='$marte1',Marte2='$marte2',Marte3='$marte3',Marte4='$marte4',Marte5='$marte5',
     Merkure1='$merkure1',Merkure2='$merkure2',Merkure3='$merkure3',Merkure4='$merkure4',Merkure5='$merkure5',
     Enjte1='$enjte1',Enjte2='$enjte2',Enjte3='$enjte3',Enjte4='$enjte4',Enjte5='$enjte5',
-    Premte1='$premte1',Premte2='$premte2',Premte3='$premte3',Premte4='$premte4',Premte5='$premte5'";
+    Premte1='$premte1',Premte2='$premte2',Premte3='$premte3',Premte4='$premte4',Premte5='$premte5' where ID='$id'";
+
+$validSubjects = ['Gjuhe Shqipe', 'Matematike', 'Gjuhe Angleze', 'Shkenca Natyrore', 'Art', 'Muzike', 'Edukate fizike', 'Edukate qytetare'];
+$subjects = [
+    $hene1, $hene2, $hene3, $hene4, $hene5,
+    $marte1, $marte2, $marte3, $marte4, $marte5,
+    $merkure1, $merkure2, $merkure3, $merkure4, $merkure5,
+    $enjte1, $enjte2, $enjte3, $enjte4, $enjte5,
+    $premte1, $premte2, $premte3, $premte4, $premte5
+];
+
+foreach ($subjects as $subject) {
+    if (!in_array($subject, $validSubjects)) {
+        echo '<script>alert("Lenda gabim! Lende valide jane: Gjuhe Shqipe, Matematike, Gjuhe Angleze, Shkenca Natyrore, Art, Muzike, Edukate fizike, Edukate qytetare")</script>';
+        exit; // Stop further execution
+    }
+}
 
     if(mysqli_query($db,$qry)){
         header('location:drejtori-lista-orare.php');
