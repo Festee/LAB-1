@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+body{
+    background-color: #F9D8E5;
+    display: flex;
+    flex-direction: row;
+}
+
+.majta{
+    width: 300px;
+    height:762px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction:column ;
+    justify-content: center;
+    align-self: center;
+}
+
+.majta h1{
+    margin: 0 auto;
+    margin-top: -60px;
+}
+
+.nxenesi{
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-icon{
+    background-color:#FBD9E7 ;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+#emri{
+    font-size: 30px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+
+#emri a{
+    color: black;
+}
+
+.opsionet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.orari, .materialet, .notat, .njoftimet, .kalkulatori{
+    font-size: 25px;
+    margin-top: 20px;
+    font-family: 'Sigmar', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.orari a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.materialet a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.notat a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.njoftimet a{
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.kalkulatori a{
+    color: white;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.orari i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.njoftimet i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.kalkulatori i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.notat i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+.materialet i{
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px ;
+}
+
+a:hover{
+    color: black;
+}
+
+#logout{
+    width: 200px;
+    margin:0 auto;
+    height: 70px;
+    padding: 10px;
+    border-radius:40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 17px 14px -6px rgba(0,0,0,1);
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout:hover{
+    color: red;
+    background-color: white;
+}
+
+#logout a{
+    color: white;
+    text-decoration: none;
+    transition: 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+#logout:hover{
+    color: red;
+    background-color: red;
+}
+
+.djathta{
+    height:760px;
+    width: 1234px;
+    display: flex;
+    justify-content:space-evenly;
+    align-self: center;
+    flex-direction: column;
+}
+
+.orari-im{
+    margin:0 auto;
+    font-size: 35px;
+    width: 400px;
+    height: 50px;
+    background-color: #8ABAD7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.ditet{
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.dita{
+    font-size: 20px;
+    height: 280px;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: #8ABAD7;
+    border-radius: 30px;
+}
+
+.dita h1{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.dita ol li{
+    margin: 5px;
+    margin-left:30px ;
+}
+
+.dita ol{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
